@@ -19,7 +19,7 @@ openpyxl = "^3.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.10.1"
+black = {extras = ["jupyter"], version = "^23.11.0"}
 
 [build-system]
 requires = ["poetry-core"]
