@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 texts/
 texts.tar.gz
+texts_joined/
+*.zip
