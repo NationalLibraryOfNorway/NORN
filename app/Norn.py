@@ -26,7 +26,7 @@ def main():
     col1, col2 = st.columns([4, 1])
     col1.title("Norn")
 
-    link = "https://github.com/tungland/NORN"
+    link = "https://github.com/nationallibraryofnorway/NORN"
 
     col2.markdown(
         f"""<div style="float: right;">
