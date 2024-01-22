@@ -1,3 +1,4 @@
+"""Library for getting text from alto xml pages from the National Library of Norway using the fulltext API"""
 import requests
 from bs4 import BeautifulSoup
 from typing import NamedTuple, Optional, Iterable, TypedDict

@@ -1,3 +1,4 @@
+"""Tools for working with poems from the National Library of Norway"""
 from typing import Iterable, Optional, List
 import re
 import pandas as pd
@@ -10,6 +11,10 @@ from norn.alto_tools import get_alto
 
 @dataclass
 class Poem:
+    """Poem class
+    
+    Represents a poem from the National Library of Norway from the Norn poems project
+    """
     urn: str
     title: str
     page_start: int
@@ -23,6 +28,10 @@ class Poem:
 
 @dataclass
 class PoemCollection:
+    """Poem collection class
+    
+    Represents a collection of poems from the National Library of Norway from the Norn poems project
+    """
     poems: List[Poem]
     urn: str
     author: str
@@ -129,7 +138,7 @@ class PoemsTester:
 
 
 def main():
-    data = "/home/larsm/projects/NORN/poems/Extract_poems/1890 enkeltdikt.xlsx"
+    data = "../poems/Extract_poems/1890 enkeltdikt.xlsx"
 
     df = pd.read_excel(data, header=None)
     poems = create_list_of_books(df)
