@@ -162,3 +162,7 @@ texts/
 texts.tar.gz
 texts_joined/
 *.zip
+
+
+# Data
+project_metadata.db
