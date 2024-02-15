@@ -1,4 +1,4 @@
-from norn.poems import Poem, PoemCollection
+from norn_dh.poems import Poem, PoemCollection
 
 # Test for Poem class
 class TestPoem:

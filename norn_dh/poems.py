@@ -3,10 +3,10 @@ from typing import Iterable, Optional, List
 import re
 import pandas as pd
 import numpy as np
-from norn.utils import is_valid_digibok_urn
+from norn_dh.utils import is_valid_digibok_urn
 from dataclasses import dataclass
 from tqdm import tqdm
-from norn.alto_tools import get_alto
+from norn_dh.alto_tools import get_alto
 
 
 @dataclass
