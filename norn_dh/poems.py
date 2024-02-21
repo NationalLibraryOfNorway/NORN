@@ -1,4 +1,5 @@
 """Tools for working with poems from the National Library of Norway"""
+
 from typing import Iterable, Optional, List
 import re
 import pandas as pd
@@ -12,9 +13,10 @@ from norn_dh.alto_tools import get_alto
 @dataclass
 class Poem:
     """Poem class
-    
+
     Represents a poem from the National Library of Norway from the Norn poems project
     """
+
     urn: str
     title: str
     page_start: int
@@ -29,9 +31,10 @@ class Poem:
 @dataclass
 class PoemCollection:
     """Poem collection class
-    
+
     Represents a collection of poems from the National Library of Norway from the Norn poems project
     """
+
     poems: List[Poem]
     urn: str
     author: str
@@ -43,7 +46,7 @@ class PoemCollection:
 
 def process_master_sheet(df: pd.DataFrame) -> List[PoemCollection]:
     """Process master sheet from Ranveig
-    
+
     Create list of PoemCollection objects from master sheet
 
     Args:
@@ -59,14 +62,20 @@ def process_master_sheet(df: pd.DataFrame) -> List[PoemCollection]:
         if is_valid_digibok_urn(str(row.iloc[0])):
             if book is not None:
                 book_list.append(book)
-            
+
             # Year is in row 3 or 4
             if row.iloc[3] is not np.nan:
                 year = int(row.iloc[3])
-            elif[4] is not np.nan:
+            elif [4] is not np.nan:
                 year = int(row.iloc[4])
-            
-            book = PoemCollection(poems=[], urn=row.iloc[0], author=row.iloc[1], title=row.iloc[2], year=year)
+
+            book = PoemCollection(
+                poems=[],
+                urn=row.iloc[0],
+                author=row.iloc[1],
+                title=row.iloc[2],
+                year=year,
+            )
         else:
             if row.iloc[1] == "Tittel på dikt":
                 continue
@@ -75,13 +84,13 @@ def process_master_sheet(df: pd.DataFrame) -> List[PoemCollection]:
             elif row.iloc[0] == "1890 enkeltdikt":
                 continue
             else:
-                if book is not None:                    
+                if book is not None:
                     book.poems.append(Poem(book.urn, *row.iloc[1:7]))
                 else:
                     raise ValueError("Book is None")
-                    
+
     return book_list
-    
+
 
 def create_list_of_books(df: pd.DataFrame, remove_empty=True) -> List[Poem]:
     """Create list of poems from dataframe

@@ -16,4 +16,4 @@ def check_urn(urn_to_check: str) -> bool | dict:
     if response.status_code == 200:
         return response.json()["accessInfo"]["isPublicDomain"]
     else:
-        return {"error" : f"Could not find urn {urn_to_check}"}
+        return {"error": f"Could not find urn {urn_to_check}"}
