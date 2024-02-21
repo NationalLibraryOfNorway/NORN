@@ -1,3 +1,6 @@
 [submodule "poems"]
 	path = poems
 	url = https://github.com/NationalLibraryOfNorway/NORN-poems.git
+[submodule "norn_fulltext"]
+	path = norn_fulltext
+	url = https://github.com/nationallibraryofnorway/norn_fulltext.git
