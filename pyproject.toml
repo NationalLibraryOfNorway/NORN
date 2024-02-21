@@ -22,8 +22,9 @@ scipy = "^1.11.4"
 python-dotenv = "^1.0.1"
 
 
+
 [tool.poetry.group.dev.dependencies]
-black = {extras = ["jupyter"], version = "^23.11.0"}
+black = {extras = ["jupyter"], version = "^24.2.0"}
 jupyter = "^1.0.0"
 
 
@@ -32,6 +33,9 @@ pytest = "^7.4.3"
 
 [tool.poetry.group.app.dependencies]
 streamlit = "^1.28.0"
+flask = "^3.0.2"
+gunicorn = "^21.2.0"
+flask-login = "^0.6.3"
 
 
 [tool.poetry.group.poemsapp.dependencies]
